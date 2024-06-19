@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     tools {
-        nodejs '22.3.0'
+        nodejs '21.6.2'
     }
     
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'mangatoon-gitlab', url: 'https://gitlab.com/datnmptit/mangatoon.git'
+                git 'https://github.com/datptithcm/mangatoon-api.git'
             }
         }
 
