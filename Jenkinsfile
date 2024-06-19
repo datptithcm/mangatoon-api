@@ -32,13 +32,23 @@ pipeline {
 
         stage('Test') {
              steps {
-                sh 'npm test'
+                dir('./user-api') {
+                    sh 'yarn test'
+                }
+                dir('./story-api') {
+                    sh 'yarn test'
+                }
+                dir('./comment-api') {
+                    sh 'yarn test'
+                }
             }
         }
 
-        stage('Deploy') {
+        // stage('Deploy') {
+        //     steps {
 
-        }
+        //     }
+        // }
     }
 
     post {
