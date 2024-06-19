@@ -1,0 +1,6 @@
+**/.DS_Store
+.vscode
+./volumes/rabbitmq
+./volumes/comment_redis_data
+./volumes/user_redis_data
+./volumes/story_redis_data

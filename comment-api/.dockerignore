@@ -1,0 +1,10 @@
+**/.dockerignore
+**/.git
+**/.gitignore
+**/.vscode
+**/Dockerfile*
+**/node_modules
+# # **/build
+README.Docker.md
+yarn.lock
+# tsconfig.json
