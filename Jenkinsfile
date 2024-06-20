@@ -47,11 +47,15 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     steps {
-
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                steps {
+                    script {
+                        sh 'docker compose -f compose.yaml up -d'
+                    }
+                }c 
+            }
+        }
     }
 
 }
