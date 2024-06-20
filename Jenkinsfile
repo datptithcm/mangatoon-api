@@ -34,12 +34,15 @@ pipeline {
              steps {
                 dir('./user-api') {
                     sh 'yarn test'
+                    junit './test-results/jest/junit.xml'
                 }
                 dir('./story-api') {
                     sh 'yarn test'
+                    junit './test-results/jest/junit.xml'
                 }
                 dir('./comment-api') {
                     sh 'yarn test'
+                    junit './test-results/jest/junit.xml'
                 }
             }
         }
@@ -51,12 +54,4 @@ pipeline {
         // }
     }
 
-    post {
-        always {
-            junit './user-api/test-results/jest/junit.xml'
-            junit './story-api/test-results/jest/junit.xml'
-            junit './comment-api/test-results/jest/junit.xml'
-            archiveArtifacts artifacts: '**/dist/*.js', allowEmptyArchive: true
-        }
-    }
 }
