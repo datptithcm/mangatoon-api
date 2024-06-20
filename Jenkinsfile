@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/datptithcm/mangatoon-api.git'
+                git credentialsId: 'mangatoon', url: 'https://gitlab.com/datnmptit/mangatoon-api.git'
             }
         }
 
@@ -53,7 +53,9 @@ pipeline {
 
     post {
         always {
-            junit 'test-results/jest/junit.xml'
+            junit './user-api/test-results/jest/junit.xml'
+            junit './story-api/test-results/jest/junit.xml'
+            junit './comment-api/test-results/jest/junit.xml'
             archiveArtifacts artifacts: '**/dist/*.js', allowEmptyArchive: true
         }
     }
